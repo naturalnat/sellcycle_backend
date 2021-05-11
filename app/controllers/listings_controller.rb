@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  before_action :set_listing, only: [:show, :create, :update, :destroy]
+  # before_action :set_listing, only: [:show, :create, :update, :destroy]
 
   # GET /listings
   def index
@@ -39,13 +39,13 @@ class ListingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_listing
-      @listing = Listing.find(params[:id])
-    end
+    # # Use callbacks to share common setup or constraints between actions.
+    # def set_listing
+    #   @listing = Listing.find(params[:listing][:id])
+    # end
 
-    # Only allow a list of trusted parameters through.
+    # # Only allow a list of trusted parameters through.
     def listing_params
-      params.require(:listing).permit(:imgsrc, :brand, :year, :size, :description, :title)
-    end
+       params.require(:listing).permit(:imgsrc, :brand, :year, :size, :description, :title)
+     end
 end
