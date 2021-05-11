@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  before_action :set_listing, only: [:show, :update, :destroy]
+  before_action :set_listing, only: [:show, :create, :update, :destroy]
 
   # GET /listings
   def index
