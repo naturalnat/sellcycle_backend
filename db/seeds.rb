@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 10.times do 
-    Listing.create(imgsrc: 'https://i.imgur.com/S5QQsGU.gif', title: 'test', brand: 'fuji', year: 1979, size: 52, description: 'desctest', location: 'queens')
+    Listing.create(imgsrc: 'https://i.imgur.com/S5QQsGU.gif', brand: 'fuji', year: 1979, size: 52, description: 'desctest', title: 'test')
 end 
 
 10.times do 
