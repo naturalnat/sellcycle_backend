@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  # before_action :set_listing, only: [:show, :create, :update, :destroy]
+
 
   # GET /listings
   def index
@@ -35,13 +35,14 @@ class ListingsController < ApplicationController
 
   # DELETE /listings/1
   def destroy
+    @listing =Listing.find(params[:id])
     @listing.destroy
   end
 
   private
     # # Use callbacks to share common setup or constraints between actions.
     # def set_listing
-    #   @listing = Listing.find(params[:listing][:id])
+    #   @listing = Listing.find(params[:id])
     # end
 
     # # Only allow a list of trusted parameters through.
