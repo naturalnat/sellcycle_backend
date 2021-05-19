@@ -9,6 +9,7 @@ class ListingsController < ApplicationController
 
   # GET /listings/1
   def show
+    set_listing
     render json: @listing
   end
 
@@ -34,11 +35,14 @@ class ListingsController < ApplicationController
 
   # DELETE /listings/1
   def destroy
-    @listing =Listing.find(params[:id])
-    @listing.destroy
+    @listing = Listing.find(params[:id]).destroy
   end
 
   private
+
+  def set_listing
+    @listing = Listing.find(params[:id])
+  end
     # Only allow a list of trusted parameters through.
     def listing_params
        params.require(:listing).permit(:imgsrc, :brand, :year, :size, :description, :title)

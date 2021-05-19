@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update, :destroy]
-
   # GET /users
   def index
     @users = User.all
@@ -10,7 +8,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    render json: @user
+     render json: @user
   end
 
   # POST /users
@@ -23,6 +21,17 @@ class UsersController < ApplicationController
       render json: @user.errors, status: :unprocessable_entity
     end
   end
+
+  def login
+    @user = User.find_by(user_params)
+
+    if @user
+      render json: {"success": true}
+    else
+      render json: {"success": false}  
+    end
+  end
+
 
   # PATCH/PUT /users/1
   def update
