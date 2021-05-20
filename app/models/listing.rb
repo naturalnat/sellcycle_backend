@@ -1,5 +1,5 @@
 class Listing < ApplicationRecord
-    # belongs_to :user
+    belongs_to :user
 
     validates :imgsrc, presence: true
     validates :brand, presence: true

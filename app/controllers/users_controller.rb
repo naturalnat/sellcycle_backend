@@ -31,7 +31,7 @@ class UsersController < ApplicationController
         username: @user.username,
         id: @user.id,
         status: 200
-
+          
       }, status: 200
       #@user, :except => [:password, :created_at, :updated_at]
 
