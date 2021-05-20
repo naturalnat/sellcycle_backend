@@ -22,25 +22,36 @@ class UsersController < ApplicationController
     end
   end
 
-  def login
+  #POST user params to users/login
+  def login 
     @user = User.find_by(user_params)
 
     if @user
-      render json: {"success": true}
+      render json: {
+        username: @user.username,
+        id: @user.id,
+        status: 200
+
+      }, status: 200
+      #@user, :except => [:password, :created_at, :updated_at]
+
     else
-      render json: {"success": false}  
+      render json: {
+        error: "No such user.",
+        status: 400
+      }, status: 400
     end
   end
 
 
-  # PATCH/PUT /users/1
-  def update
-    if @user.update(user_params)
-      render json: @user
-    else
-      render json: @user.errors, status: :unprocessable_entity
-    end
-  end
+  # # PATCH/PUT /users/1
+  # def update
+  #   if @user.update(user_params)
+  #     render json: @user
+  #   else
+  #     render json: @user.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /users/1
   def destroy
