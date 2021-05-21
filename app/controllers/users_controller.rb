@@ -33,8 +33,7 @@ class UsersController < ApplicationController
         status: 200
           
       }, status: 200
-      #@user, :except => [:password, :created_at, :updated_at]
-
+      
     else
       render json: {
         error: "No such user.",

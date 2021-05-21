@@ -24,16 +24,7 @@ class ListingsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /listings/1
-  def update
-    if @listing.update(listing_params)
-      render json: @listing
-    else
-      render json: @listing.errors, status: :unprocessable_entity
-    end
-  end
 
-  # DELETE /listings/1
   def destroy
     @listing = Listing.find(params[:id]).destroy
   end
@@ -43,7 +34,7 @@ class ListingsController < ApplicationController
   def set_listing
     @listing = Listing.find(params[:id])
   end
-    # Only allow a list of trusted parameters through.
+
     def listing_params
        params.require(:listing).permit(:imgsrc, :brand, :year, :size, :description, :title, :user_id)
      end
