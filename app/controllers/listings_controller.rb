@@ -27,6 +27,12 @@ class ListingsController < ApplicationController
 
   def destroy
     @listing = Listing.find(params[:id]).destroy
+    if @listing
+      render json: {
+        id: @listing.id,
+        status: 200
+      }, status: 200
+    end
   end
 
   private
