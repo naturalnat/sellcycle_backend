@@ -10,6 +10,5 @@
     Listing.create(imgsrc: 'https://i.imgur.com/S5QQsGU.gif', brand: 'fuji', year: 1979, size: 52, description: 'desctest', title: 'test')
 end 
 
-10.times do 
-    User.create(username: 'sneed', password: 'feedseed')
-end 
+User.create(username: "sneed", password: "sneed")
+User.create(username: "sneed2", password: "sneed2")
