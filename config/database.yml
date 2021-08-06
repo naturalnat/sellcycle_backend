@@ -28,27 +28,22 @@
 # production:
 #   <<: *default
 #   database: db/production.sqlite3
-
-# PostgreSQL
-default: &default
-adapter: postgresql
-encoding: unicode
-pool: <%= ENV.fetch(“RAILS_MAX_THREADS”) { 5 } %>
 development:
-<<: *default
-# Your app name(e.g. my app directory folder name is fotoset-backend)
-database: fotoset_backend_development
-# you need to put your username and password here
-username: Your PostgreSQL server name
-password: The password you are using to login into your computer
+ adapter: mysql2
+ encoding: utf8
+ database: my_app_development
+ pool: 5
+ username: root
+ password:
+
 test:
-<<: *default
-# Your app name(e.g. my app directory folder name is fotoset-backend)
-database: fotoset_backend_test
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+
 production:
-<<: *default
-# Your app name(e.g. my app directory folder name is fotoset-backend)
-# you don’t need username and password here below
-database: fotoset_backend_production
-username: fotoset_backend
-password: <%= ENV[‘FOTOSET_BACKEND_DATABASE_PASSWORD’] %> 
+      adapter: postgresql
+      database: my_database_production
+      pool: 5
+      timeout: 5000
