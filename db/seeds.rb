@@ -6,9 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-10.times do 
-    Listing.create(imgsrc: 'https://i.imgur.com/S5QQsGU.gif', brand: 'fuji', year: 1979, size: 52, description: 'desctest', title: 'test')
-end 
 
-User.create(username: "sneed", password: "sneed")
-User.create(username: "sneed2", password: "sneed2")
+User.create(username: "user", password: "user")
+User.create(username: "user1", password: "user1")
+User.create(username: "user2", password: "user2")
