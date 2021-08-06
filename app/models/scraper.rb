@@ -13,5 +13,5 @@ class Scraper
         end 
     end
 
-    scrapebrands
+    
 end 
